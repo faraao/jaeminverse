@@ -14,7 +14,7 @@ if (!isset($_SESSION['username'])) {
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Daily Journal | Admin</title>
+    <title>JAEMINverse | Admin</title>
     <link rel="icon" href="img/logo.png" />
     <link
     rel="stylesheet"
@@ -49,7 +49,7 @@ if (!isset($_SESSION['username'])) {
     <!-- nav begin -->
     <nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top bg-danger-subtle">
     <div class="container">
-        <a class="navbar-brand" href="">My Daily Journal</a>
+        <a class="navbar-brand" href="">JAEMINverse</a>
         <button
         class="navbar-toggler"
         type="button"
@@ -114,7 +114,8 @@ if (!isset($_SESSION['username'])) {
         ><i class="bi bi-whatsapp h2 p-2 text-dark"></i
         ></a>
     </div>
-    <div>Aprilyani Nur Safitri &copy; 2023</div>
+    <div>Fariida Qurrota 'Aini' &copy; 2024
+    </div>
     </footer>
     <!-- footer end -->
     <script
