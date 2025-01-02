@@ -275,7 +275,7 @@ include "koneksi.php";
             </div>
             <br/>
             <div>
-            Copyright &copy; 2024 - <span>Nona Nabila Fatika.</span> All Right Reserved.
+            Copyright &copy; 2024 - <span>Fariida Qurrota 'Aini.</span> All Right Reserved.
             </div>
         </footer>
         <!-- footer end -->
