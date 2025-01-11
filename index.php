@@ -134,7 +134,7 @@ include "koneksi.php";
         <!-- Gallery begin-->
 <section id="gallery" class="text-center p-5">
     <div class="container">
-        <h1 class="fw-bold display-4 pb-3">Galeri</h1>
+        <h1 class="fw-bold display-4 pb-3">Gallery</h1>
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php
