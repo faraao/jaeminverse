@@ -131,40 +131,40 @@ include "koneksi.php";
         </div>
         </section>
         <!-- article end -->
-        <!-- gallery begin -->
-        <section id="gallery" class="text-center p-5 bg-danger-subtle">
-            <div class="container">
-                <h1 class="fw-bold display-4 pb-3">gallery</h1>
-                <div id="carouselExample" class="carousel slide">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="https://pbs.twimg.com/media/Gbiox3vaEAAvr2n?format=jpg&name=large" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="https://pbs.twimg.com/media/GUTgGFAWYAA9raX?format=jpg&name=large" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="https://pbs.twimg.com/media/GbaKb-1bMAAQMTC?format=jpg&name=large" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="https://pbs.twimg.com/media/Gc2BZSgaAAcQMFP?format=jpg&name=large" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="https://pbs.twimg.com/media/Fzh2X0OWYAQqCeH?format=jpg&name=large" class="d-block w-100">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
+        <!--gallery begin -->
+                <!-- Gallery -->
+                <section id="gallery" class="text-center p-5">
+    <div class="container">
+        <h1 class="fw-bold display-4 pb-3">Galeri</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        <?php
+        $sql = "SELECT * FROM galeri ORDER BY tanggal DESC";
+        $hasil = $conn->query($sql); 
+
+        while($row = $hasil->fetch_assoc()){
+        ?>
+                <div class="col">
+            <div class="card h-100">
+                <img src="img/<?= $row["gambar"]?>" class="card-img-top" alt="..." />
+                <div class="card-body"> 
+                </div>
+                <div class="card-footer">
+                <small class="text-body-secondary">
+                    <?= $row["tanggal"]?>
+                </small>
                 </div>
             </div>
+            </div>
+            <?php
+        }
+        ?> 
+            
+                    </div>
+                </div>
+            </section>
+            <!--  -->
         </section>
-        <!-- gallery end -->
+        <!--gallery end  -->
         <!-- schedule begin -->
         <section id="schedule" class="text-center p-5">
         <div class="container">
