@@ -131,40 +131,50 @@ include "koneksi.php";
         </div>
         </section>
         <!-- article end -->
-        <!--gallery begin -->
-                <!-- Gallery -->
-                <section id="gallery" class="text-center p-5">
+        <!-- Gallery begin-->
+<section id="gallery" class="text-center p-5">
     <div class="container">
         <h1 class="fw-bold display-4 pb-3">Galeri</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-        <?php
-        $sql = "SELECT * FROM galeri ORDER BY tanggal DESC";
-        $hasil = $conn->query($sql); 
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <?php
+                // Query untuk mengambil data dari database
+                $sql = "SELECT * FROM galeri ORDER BY tanggal DESC";
+                $hasil = $conn->query($sql);
 
-        while($row = $hasil->fetch_assoc()){
-        ?>
-                <div class="col">
-            <div class="card h-100">
-                <img src="img/<?= $row["gambar"]?>" class="card-img-top" alt="..." />
-                <div class="card-body"> 
-                </div>
-                <div class="card-footer">
-                <small class="text-body-secondary">
-                    <?= $row["tanggal"]?>
-                </small>
-                </div>
-            </div>
-            </div>
-            <?php
-        }
-        ?> 
-            
+                // Indikator untuk item aktif
+                $isActive = true;
+
+                while ($row = $hasil->fetch_assoc()) {
+                    // Tambahkan kelas 'active' hanya pada item pertama
+                    $activeClass = $isActive ? 'active' : '';
+                    $isActive = false; // Set isActive menjadi false setelah iterasi pertama
+                ?>
+                    <div class="carousel-item <?= $activeClass ?>">
+                        <img src="img/<?= $row['gambar'] ?>" class="d-block w-100" alt="Gambar Galeri" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <p class="bg-dark text-white p-1 rounded">
+                                <?= $row['tanggal'] ?>
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <!--  -->
-        </section>
-        <!--gallery end  -->
+                <?php
+                }
+                ?>
+            </div>
+            <!-- Tombol navigasi carousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+<!-- Gallery end-->
         <!-- schedule begin -->
         <section id="schedule" class="text-center p-5">
         <div class="container">
